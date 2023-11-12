@@ -13,6 +13,15 @@ if [[ $(_os_distro) == "ubuntu" ]]; then
             trigger_apt_update=true
         fi
     fi
+
+if [[ $(_os_distro) == "ubuntu" ]]; then
+    if [[ $(_os_codename) == "jammy" ]]; then
+        if ! grep -s 'ondrej/nginx' /etc/apt/sources.list.d/ondrej-ubuntu-nginx-jammy.list 2> /dev/null | grep -q -v '^#'; then
+            echo_info "Adding Nginx repo"
+            add-apt-repository -y ppa:ondrej/nginx >> ${log} 2>&1
+            trigger_apt_update=true
+        fi
+    fi
     #Ignore a found match if the line is commented out
     if ! grep 'universe' /etc/apt/sources.list | grep -q -v '^#'; then
         echo_info "Enabling universe repo"
