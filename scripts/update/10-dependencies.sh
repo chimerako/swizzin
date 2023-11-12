@@ -13,7 +13,6 @@ if [[ $(_os_distro) == "ubuntu" ]]; then
             trigger_apt_update=true
         fi
     fi
-
 if [[ $(_os_distro) == "ubuntu" ]]; then
     if [[ $(_os_codename) == "jammy" ]]; then
         if ! grep -s 'ondrej/nginx' /etc/apt/sources.list.d/ondrej-ubuntu-nginx-jammy.list 2> /dev/null | grep -q -v '^#'; then
