@@ -23,6 +23,7 @@ if [[ $(_os_distro) == "ubuntu" ]]; then
         "jammy")
             add_repository "ubuntu-toolchain-r/ppa" "/etc/apt/sources.list.d/ubuntu-toolchain-r-ubuntu-ppa-jammy.list"
             add_repository "ondrej/nginx" "/etc/apt/sources.list.d/ondrej-ubuntu-nginx-jammy.list"
+            add_repository "ondrej/php" "/etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list"
             ;;
     esac
 
