@@ -67,6 +67,8 @@ apt_install $APT
 
 wait
 
+apt_remove --purge apache2
+
 # Append the results of temp.log to swizzin.log and remove temp.log
 echo_log_only "Begin of OpenSSL dhparm results"
 cat $templog >> $log 2>&1
